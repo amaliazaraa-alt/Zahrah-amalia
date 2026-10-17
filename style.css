@@ -1,0 +1,141 @@
+/* Pengaturan Umum & Variabel Tema Terang (Default) */
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333333;
+    --header-bg: #2c3e50;
+    --header-text: #ffffff;
+    --card-bg: #ffffff;
+    --card-border: #dddddd;
+    --btn-bg: #3498db;
+    --btn-text: #ffffff;
+}
+
+/* Tema Gelap */
+body.dark-theme {
+    --bg-color: #1a1a1a;
+    --text-color: #f4f4f9;
+    --header-bg: #111111;
+    --header-text: #f4f4f9;
+    --card-bg: #2a2a2a;
+    --card-border: #444444;
+    --btn-bg: #e67e22;
+    --btn-text: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+/* Bagian Profil */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    max-width: 100%; /* Agar gambar tidak melebihi kontainer */
+}
+
+/* Tombol */
+button {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+/* Bagian Hobi / Keterampilan */
+.skills-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column; /* Default HP: Satu kolom */
+    gap: 15px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* CSS Media Queries untuk Responsivitas */
+@media (min-width: 768px) {
+    .profile-section {
+        flex-direction: row;
+        text-align: left;
+        gap: 30px;
+    }
+
+    .profile-img {
+        margin-bottom: 0;
+    }
+
+    /* Layar minimal 768px: Tiga kolom */
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
